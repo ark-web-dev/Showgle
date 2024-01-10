@@ -21,6 +21,8 @@ export const addShowToHistory = (show: IShow) => {
 
     showsHistory.unshift(show);
     setLocalStorage('showsHistory', showsHistory);
+  } else {
+    return;
   }
 
   sidebarHistoryOutput?.prepend(
