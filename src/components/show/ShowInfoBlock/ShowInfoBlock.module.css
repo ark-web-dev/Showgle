@@ -1,0 +1,29 @@
+.showContent {
+  flex-grow: 1;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.showSiteBtn {
+  padding: 14px 22px;
+  width: 200px;
+  color: #fff;
+  text-align: center;
+  background: var(--background-gradient-dark);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  border-radius: 52px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.showSiteBtn:hover {
+  color: #fff;
+  transform: scale(1.05);
+}

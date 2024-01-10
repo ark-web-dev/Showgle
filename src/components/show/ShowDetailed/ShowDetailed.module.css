@@ -1,0 +1,4 @@
+.showDetailed {
+  display: flex;
+  flex-wrap: wrap;
+}

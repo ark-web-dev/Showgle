@@ -1,0 +1,110 @@
+.sidebar {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 300px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--color-gray);
+  position: fixed;
+  top: 0;
+  right: -300px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray) var(--color-dark);
+  transition: right 0.5s;
+  background-color: var(--color-dark);
+  z-index: 1;
+}
+
+.sidebar:global.visible {
+  right: 0;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-gray);
+  border-radius: 5px;
+
+  visibility: hidden;
+  opacity: 0;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+}
+
+.sidebar::-webkit-scrollbar-button {
+  background-color: var(--color-gray);
+  border-radius: 5px;
+}
+
+.sidebarHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-right: 10px;
+  background-color: var(--color-dark);
+}
+
+.closeIcon {
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: normal;
+  padding-left: 15px;
+  margin-top: 20px;
+}
+
+.outputList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: var(--color-dark);
+}
+
+.historyBtn {
+  position: fixed;
+  z-index: 0;
+  top: 15px;
+  right: 15px;
+  height: 45px;
+  width: 45px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-dark);
+  border-radius: 50%;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  transition: background 1s;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-gray-light);
+  margin-left: 10px;
+  display: none;
+}
+
+.historyBtn:hover {
+  background-color: var(--color-gray-light);
+}
+
+.historyBtn:global.visible {
+  display: flex;
+}
+
+.historyBtn:global.active {
+  background-color: var(--color-gray-light);
+}
