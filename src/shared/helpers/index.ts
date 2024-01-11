@@ -1,4 +1,4 @@
-export { addShowToHistory } from './show/addShowToHistory';
+export { addShowToHistory } from './history/addShowToHistory';
 export { getShowRatingColor } from './show/getShowRatingColor';
 export { updateSingleShow } from './show/updateSingleShow';
 export { hideSidebar } from './sidebar/hideSidebar';
