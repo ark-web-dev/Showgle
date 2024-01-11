@@ -36,7 +36,11 @@ export const searchShows = async (value: string) => {
   try {
     showsData = await searchShowByTitle(value);
   } catch (error) {
-    throw error;
+    showSearchMessage(
+      searchOutput,
+      'Something went wrong with the search. Please try again later.'
+    );
+    return;
   }
 
   if (!showsData.length && !isHasHistory) {
