@@ -3,7 +3,12 @@ import styles from './Sidebar.module.css';
 import closeIcon from '@/shared/assets/icons/close-icon.svg';
 import historyIcon from '@/shared/assets/icons/history-icon.svg';
 import { ShowListItem } from '@/components/show';
-import { hideSidebar, updateSingleShow, showSidebar } from '@/shared/helpers';
+import {
+  hideSidebar,
+  updateSingleShow,
+  showSidebar,
+  updateOnHistoryChange,
+} from '@/shared/helpers';
 import {
   hideOnDocumentClick,
   getLocalStorage,
@@ -12,6 +17,8 @@ import {
 import { Icon } from '@/shared/ui-components';
 
 export const Sidebar = () => {
+  updateOnHistoryChange();
+
   const windowWidth = window.innerWidth;
 
   if (windowWidth < 920) {

@@ -1,4 +1,5 @@
 export { addShowToHistory } from './history/addShowToHistory';
+export { updateOnHistoryChange } from './history/updateOnHistoryChange';
 export { getShowRatingColor } from './show/getShowRatingColor';
 export { updateSingleShow } from './show/updateSingleShow';
 export { hideSidebar } from './sidebar/hideSidebar';
