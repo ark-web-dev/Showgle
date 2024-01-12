@@ -25,13 +25,17 @@ export const Sidebar = () => {
     hideOnDocumentClick('history-sidebar', hideSidebar);
   }
 
-  let showsHistory = getLocalStorage<IShow[]>('showsHistory')?.map(
-    (show: IShow) =>
+  const showsContainer = document.createDocumentFragment();
+  const showsHistory = getLocalStorage<IShow[]>('showsHistory');
+
+  showsHistory?.forEach((show: IShow) =>
+    showsContainer.append(
       ShowListItem({
         type: 'history',
         show,
         onClick: () => updateSingleShow(show),
       })
+    )
   );
 
   const isHasHistory = showsHistory && showsHistory.length;
@@ -82,7 +86,7 @@ export const Sidebar = () => {
         className: styles.outputList,
         id: 'sidebar-history-output',
       },
-      ...(showsHistory ? showsHistory : [])
+      showsContainer
     )
   );
 };

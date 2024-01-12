@@ -53,8 +53,10 @@ export const searchShows = async (value: string) => {
 
   clearElementsContent(searchOutput);
 
+  const showsContainer = document.createDocumentFragment();
+
   showsData?.forEach(({ show }: ShowData) => {
-    searchOutput?.append(
+    showsContainer.append(
       ShowListItem({
         type: 'search',
         show,
@@ -65,4 +67,6 @@ export const searchShows = async (value: string) => {
       })
     );
   });
+
+  searchOutput?.append(showsContainer);
 };

@@ -31,10 +31,12 @@ export const searchShowsInHistory = (value: string) => {
 
     foundShows.sort((a, b) => a[0] - b[0]);
 
+    const showsContainer = document.createDocumentFragment();
+
     for (let i = 0; i < foundShows.length && i < 5; i++) {
       const show = foundShows[i][1];
 
-      searchHistoryOutput?.append(
+      showsContainer?.append(
         ShowListItem({
           type: 'history',
           show,
@@ -44,6 +46,8 @@ export const searchShowsInHistory = (value: string) => {
         })
       );
     }
+
+    searchHistoryOutput?.append(showsContainer);
 
     return true;
   }
