@@ -1,11 +1,20 @@
-export const debounce = <T>(func: Function, ms: number) => {
-  let timer: number;
+export const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
+  func: F,
+  delay: number
+): ((...args: Parameters<F>) => ReturnType<F>) => {
+  let timeout: ReturnType<typeof setTimeout>;
 
-  return function (this: T, ...args: []) {
-    clearTimeout(timer);
+  const debounced = (...args: Parameters<F>) => {
+    let result: ReturnType<F>;
 
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, ms);
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      result = func.apply(this, args);
+    }, delay);
+
+    return result!;
   };
+
+  return debounced;
 };
