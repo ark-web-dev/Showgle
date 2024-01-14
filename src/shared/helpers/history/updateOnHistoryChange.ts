@@ -1,5 +1,6 @@
 import { ShowListItem } from '@/components/show';
 import { updateSingleShow } from '..';
+import { IShow } from '@/shared/types/types';
 
 export const updateOnHistoryChange = () => {
   window.addEventListener('storage', ({ key, oldValue, newValue }) => {
@@ -7,7 +8,16 @@ export const updateOnHistoryChange = () => {
       const sidebarHistoryOutput = document.getElementById(
         'sidebar-history-output'
       ) as HTMLElement | null;
-      const show = JSON.parse(newValue)[0];
+      let show: IShow;
+
+      try {
+        show = JSON.parse(newValue)[0];
+      } catch (error) {
+        console.log(`Parsing Error ${error}`);
+        return;
+      }
+
+      if (!show) return;
 
       sidebarHistoryOutput?.prepend(
         ShowListItem({
