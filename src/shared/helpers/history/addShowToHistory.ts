@@ -14,7 +14,7 @@ export const addShowToHistory = (show: IShow) => {
     setLocalStorage('showsHistory', [show]);
     showSidebar();
   } else if (!showsHistory.find((currShow: IShow) => currShow.id === show.id)) {
-    if (showsHistory.length === 100) {
+    if (showsHistory.length >= 100) {
       sidebarHistoryOutput?.lastChild?.remove();
       showsHistory.pop();
     }
