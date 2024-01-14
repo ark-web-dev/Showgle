@@ -1,5 +1,5 @@
 export const getLocalStorage = <T>(key: string): T | null => {
-  let item;
+  let item = null;
 
   try {
     item = localStorage.getItem(key);
@@ -7,5 +7,14 @@ export const getLocalStorage = <T>(key: string): T | null => {
     console.log(`LocalStorage Error ${error}`);
   }
 
-  return item ? JSON.parse(item) : null;
+  if (item) {
+    try {
+      item = JSON.parse(item);
+    } catch (error) {
+      console.log(`Parsing Error ${error}`);
+      return null;
+    }
+  }
+
+  return item;
 };
