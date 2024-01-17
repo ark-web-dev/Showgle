@@ -1,11 +1,11 @@
-export const debounce = <F extends (...args: Parameters<F>) => ReturnType<F>>(
+export const debounce = <F extends (...args: never[]) => unknown>(
   func: F,
   delay: number
-): ((...args: Parameters<F>) => ReturnType<F>) => {
+): ((...args: never[]) => unknown) => {
   let timeout: ReturnType<typeof setTimeout>;
 
-  const debounced = (...args: Parameters<F>) => {
-    let result: ReturnType<F>;
+  const debounced = (...args: never[]) => {
+    let result: unknown;
 
     clearTimeout(timeout);
 
