@@ -1,0 +1,21 @@
+.imageWrapper {
+  margin: 0;
+  padding-right: 30px;
+  width: 50%;
+}
+
+.showImage {
+  width: 100%;
+}
+
+@media (max-width: 580px) {
+  .imageWrapper {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+  .showImage {
+    max-width: 450px;
+  }
+}

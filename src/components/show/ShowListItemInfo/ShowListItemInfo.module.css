@@ -1,0 +1,27 @@
+.name {
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+.infoWrapper {
+  flex-grow: 1;
+  max-width: 75%;
+}
+
+.info {
+  font-size: 13px;
+  color: var(--color-gray-light);
+}
+
+.infoItem:not(:empty) {
+  margin-right: 10px;
+}
+
+.rating {
+  font-weight: bold;
+}

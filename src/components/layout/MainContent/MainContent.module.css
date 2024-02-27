@@ -1,0 +1,55 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-height: 100svh;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  transition: padding 0.5s, justify-content 0.5s;
+}
+
+@media (min-width: 920px) {
+  .mainContent:global.withHistory {
+    padding-right: 300px;
+  }
+}
+
+.singelShow {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: auto;
+  margin-bottom: 10svh;
+  transition: opacity 2s;
+}
+
+.singelShow:global.visible {
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: auto;
+}
+
+.mainTitle {
+  font-family: Product;
+  font-size: 84px;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 30px;
+  background: var(--background-gradient-white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s;
+}
+
+:global .withSingleShow {
+  .mainTitle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 70px;
+  }
+}

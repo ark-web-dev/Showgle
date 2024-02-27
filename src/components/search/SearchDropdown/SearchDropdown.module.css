@@ -1,0 +1,73 @@
+.searchDropdownWrapper {
+  background: var(--color-dark);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 6px rgba(213, 220, 240, 0.38);
+  border: 1px solid var(--color-light);
+  border-top: none;
+  padding: 4px 0;
+  width: 100%;
+  min-height: 44px;
+  max-height: 46svh;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 99%;
+  z-index: 1;
+  display: none;
+}
+
+.searchDropdownWrapper:global.visible {
+  display: block;
+}
+
+:global .withSingleShow {
+  .searchDropdownWrapper {
+    max-height: 88svh;
+  }
+  .searchDropdownInner {
+    max-height: 88svh;
+  }
+}
+
+@media (max-width: 650px) {
+  :global .withSingleShow {
+    .searchDropdownWrapper {
+      max-width: 83%;
+    }
+  }
+}
+
+.searchDropdownInner {
+  width: 100%;
+  min-height: 44px;
+  max-height: 46svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.searchDropdownInner::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.searchDropdownInner::-webkit-scrollbar-thumb {
+  background: var(--color-gray);
+  border-radius: 5px;
+}
+
+.searchDropdownInner::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+  padding-bottom: 50px;
+}
+
+.searchDropdownInner::-webkit-scrollbar-button {
+  background-color: var(--color-gray);
+  border-radius: 5px;
+}
+
+.searchList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

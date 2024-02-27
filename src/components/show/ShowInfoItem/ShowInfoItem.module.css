@@ -1,0 +1,20 @@
+.showInfoItem {
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.key {
+  color: var(--color-gray);
+  width: 100px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.value a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.value a:hover {
+  text-decoration: none;
+}
